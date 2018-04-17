@@ -6,7 +6,7 @@ LABEL ca.easypath.vendor="EasyPath IT Solutions Inc." \
 ENV NGINX_VERSION 1.12.2-2.el7
 
 RUN yum -y install epel-release && \
-    yum -y install nginx-${NGINX_VERSION} telnet net-tools && \
+    yum -y install nginx-${NGINX_VERSION} telnet net-tools git && \
     yum clean all && \
     rm -rf /var/cache/yum && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
