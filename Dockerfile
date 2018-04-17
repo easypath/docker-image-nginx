@@ -11,7 +11,7 @@ RUN yum -y install epel-release && \
     rm -rf /var/cache/yum && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stdout /var/log/nginx/error.log && \
-    touch /run/nginx.pid && chown root:nginx /run/nginx.pid && chmod 660 /run/nginx.pid && \
+    mkdir /run/nginx && chown -R nginx:nginx /run/nginx && \
     rm /etc/nginx/nginx.conf.default && \
     mkdir -p /etc/nginx/stream.conf.d/
 
